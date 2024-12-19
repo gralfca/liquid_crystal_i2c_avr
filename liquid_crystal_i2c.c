@@ -10,6 +10,7 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <stdio.h>
 
 LiquidCrystalDevice_t lq_init(uint8_t address, uint8_t columns, uint8_t rows, uint8_t dotSize)
 {
@@ -89,6 +90,15 @@ void lq_print(struct LiquidCrystalDevice_t* device, char * value)
 		letter = *(++value);
 	}
 };
+
+void lq_printf (LiquidCrystalDevice_t *device, const char *fmt, ...){
+	char buffer[MAX_PRINT_BUFFER];
+	va_list args;
+	va_start (args, fmt);
+	vsnprintf (buffer,MAX_PRINT_BUFFER,fmt, args);
+	lq_print (device, buffer);
+	va_end (args);
+}
 
 void lq_turnOnBacklight(struct LiquidCrystalDevice_t* device)
 {

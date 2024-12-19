@@ -86,6 +86,8 @@ void lq_turnOffBacklight(struct LiquidCrystalDevice_t* device);
 
 void lq_print(struct LiquidCrystalDevice_t* device, char* value);
 
+void lq_printf(struct LiquidCrystalDevice_t* device, const char* format, ...);
+
 void lq_turnOnDisplay(struct LiquidCrystalDevice_t* device);
 
 void lq_turnOffDisplay(struct LiquidCrystalDevice_t* device);
@@ -124,3 +126,4 @@ void lq_writeDevicePulse(struct LiquidCrystalDevice_t* device, uint8_t value);
 void lq_transmitI2C(struct LiquidCrystalDevice_t* device, uint8_t value);
 
 #endif /* LIQUIDCRYSTALI2CDEVICE_H_ */
+
