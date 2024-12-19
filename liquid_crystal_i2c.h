@@ -62,6 +62,8 @@
 #define LCD_READ_WRITE_BIT 0b00000010  // Read/Write bit
 #define LCD_REGISTER_SELECT_BIT 0b00000001  // Register select bit
 
+#define MAX_PRINT_BUFFER 100
+
 typedef struct LiquidCrystalDevice_t {
 	uint8_t Address;
 	uint8_t Columns;
